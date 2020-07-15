@@ -1,0 +1,348 @@
+@import './normalize';
+@import './reset.local';
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    color: #eaf7dc;
+    font-family: sans-serif;
+    background: linear-gradient(to right, rgba(5, 42, 35, 0.2), rgba(5, 42, 35,.2)),
+     url('../img/field.jpg') no-repeat center;
+    background-size: cover;
+ }
+
+.header{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+// .wi{
+//     margin: 10px;
+//     height: 200px;
+//     &::before{
+//         width: 500px;
+//     }
+// }
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr;
+    grid-template-areas:
+    "title title"
+    "today time"
+    "daily daily";
+    width: 100%;
+
+    
+    
+}
+
+
+.location{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    &__form{
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        background:  rgba(255, 255, 255, 1);
+        max-width: 250px;
+        height: 27px;
+        padding: 5px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__input{
+        border: none;
+        padding-right: 10px;
+        border-right: 1px solid rgb(214,192,123);
+        
+
+    }
+
+    &__gps-btn{
+        padding: 2px 5px 0 7px;
+ 
+        &:active{
+            transform: scale(0.9);
+        }
+        
+        svg{
+            width: 40px;
+            color: rgb(214,192,123);
+        }
+        
+    }
+
+    &__search-btn{
+        padding: 4px 10px;
+        background:  rgb(214,192,123);
+        margin-left: 10px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+
+    &__result-list{
+        display: none;
+        position: absolute;
+        top: 33px;
+        max-height: 300px;
+        width: 250px;
+        // border: 1px solid red;
+        border-top: 0;
+        z-index: 10;
+        background: #fff;
+        overflow-y: scroll;
+        border-radius: 10px;
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+         
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+            border-radius: 10px;
+        }
+         
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        }
+        li{
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+}
+
+.location-title{
+    grid-area: title;
+    font-size: 42px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+}
+
+
+.today {
+    display: flex;
+    justify-content: flex-end;
+    grid-area: today;
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 10px;
+    }
+
+
+    &__icon-wrapper {
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 210px;
+    }
+
+    &__icon {
+        transform: translateY(-70px);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__description {
+        font-size: 25px;
+        text-align: center;
+        text-transform: capitalize;
+        transform: translateY(-120px);
+    }
+
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+    }
+
+    &__degree {
+        font-size: 50px;
+    }
+
+    &__himidity{
+        padding-top: 30px;
+        letter-spacing: -1px;
+        
+    }
+
+    &__wind{
+        padding-top: 10px;
+        letter-spacing: -1px;
+    }
+
+}
+
+.time {
+    grid-area: time;
+    padding-left: 100px;
+
+
+    
+    &__hours, &__minutes, .colon {
+        font-size: 50px;
+    }
+
+    &__hours{
+        margin-left: 50px;
+    }
+
+    &__seconds {
+        font-size: 26px;
+        padding-left: 5px;
+    }
+    
+    &__date {
+        font-size: 26px;
+        padding-left: 50px;
+        margin-top: 15px;
+    }
+}
+
+
+.daily{
+    display: flex;
+    justify-content: center;
+    // display: grid;
+    // grid-template-columns: repeat(6, 1fr);
+    grid-area: daily;
+    transform: translateY(-50px);
+    
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        // max-width: 200px;
+        padding: 10px;
+        margin: 15px;
+        text-align: center; 
+        background: linear-gradient(0deg, rgba(214,192,123,0.5) 0%, rgba(204,182,114,.6) 100%);
+        border-radius: 10px;
+    }
+
+    &__weekday{
+        font-size: 23px;
+    }
+
+    &__icon{
+        height: 100px;
+    }
+
+    &__description{
+        max-width: 110px;
+        height: 30px;
+        font-size: 18px;
+        text-transform: capitalize;
+        transform: translateY(-10px);
+    }
+
+    &__temp{
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    &__himidity{
+        padding-bottom: 5px;
+        
+    }
+}
+
+    .switch {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border-radius: 100px;
+        padding: 3px 0;
+    }
+      
+      .switch__input, .switch__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+
+      }
+      
+      .switch__input {
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        pointer-events: none;
+      
+        &:checked + .switch__label {
+          background-color: hsl(230, 22%, 74%);
+        }
+      
+        &:checked + .switch__label + .switch__marker {
+          left: calc(100% - 25px + 3px);
+        }
+      
+        
+      }
+      
+      .switch__label {
+        width: 100%;
+        height: 100%;
+        color: transparent;    
+        user-select: none;
+        background: linear-gradient(0deg, rgba(214,192,123,0.5) 0%, rgba(204,182,114,.6) 100%);
+        border-radius: inherit;
+        z-index: 1;
+        transition: background .2s;
+
+        &::before{
+            position: relative;
+            content: 'C';
+            color: #ffffff;
+            left:  4px;
+            top: 5px;
+        }
+        &::after{
+            position: relative;
+            content: 'F';
+            color: #ffffff;
+            left: 2px;
+            top: 5px;
+        }
+      }
+      
+      .switch__marker {
+        position: relative;
+        background-color: hsl(230, 17%, 14%);
+        width: calc(25px - 3px * 2);
+        height: calc(25px - 3px * 2);
+        border-radius: 50%;
+        z-index: 2;
+        pointer-events: none;
+        left: 3px;
+        transition: left .2s;
+        will-change: left;
+
+       
+      }

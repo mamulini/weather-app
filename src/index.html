@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="apple-touch-icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="./assets/css/weather-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <title>Weather App </title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="location" onSubmit="return false">
+            <form class="location__form">
+                <input class="location__input" type="text" placeholder='Search location' autofocus>
+                <button type="button" class="location__gps-btn" aria-label="location button">
+                    <i class="fas fa-location-arrow" aria-hidden="true"></i>
+                </button>
+            </form>
+            <ul class="location__result-list"></ul>
+            
+            <button class="location__search-btn" type="button">Search</button>
+        </div>
+        <div class="switch">
+            <input class="switch__input" type="checkbox" id="unitSwitch">
+            <label aria-hidden="true" class="switch__label" for="unitSwitch">On</label>
+            <div aria-hidden="true" class="switch__marker"></div>
+          </div>
+        <!-- <i class="wi wi-day-sunny" ></i> -->
+    </header>
+    <main class="main">
+        <h1 class="location-title">Loading the location...</h1>
+        <div class="today">
+            <div class="today__wrapper">
+                <div class="today__icon-wrapper">
+                    <span class="today__icon"></span>
+                    <p class="today__description"></p>
+                </div>
+                <div class="today__data">
+                    
+                    <h2 class="today__degree">--</h2>
+                    <span class="today__himidity"><span>Loading...</span></span>
+                    <span class="today__wind"><span>Loading..</span></span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="time">
+            <div class="time__wrapper">
+                <span class="time__hours"></span>
+                <span class="colon">:</span>
+                <span class="time__minutes"></span>
+                <!-- <span class="colon">:</span> -->
+                <span class="time__seconds"></span>
+                <div class="time__date"></div>
+            </div>
+        </div>
+
+        <div class="daily">
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+            <div class="daily__card">
+                <h1 class="daily__weekday">sun</h1>
+                <img class="daily__icon" src="" alt="">
+                <p class="daily__description">rainy</p>
+                <span class="daily__temp">38 C</span>
+                <span class="daily__himidity">40%</span>
+                <span class="daily__wind">55km/h</span>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
